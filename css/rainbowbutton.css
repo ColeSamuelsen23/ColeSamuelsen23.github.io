@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.rainbowbutton {
+  padding: 10px;
+  width: 100px;
+  height: 40px;
+  position: relative;
+  margin: 20px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.rainbowbutton::before {
+  content: "Send";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  z-index: 1;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  left: 28px;
+  top: 5px;
+  pointer-events: none;
+  transition: transform 0.3s ease-in;
+}
+
+.rainbowbutton::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: black;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 5px;
+}
+
+.rainbowbutton-border {
+  border-radius: 5px;
+  position: absolute;
+  width: calc(100%);
+  height: calc(100%);
+  border: 3px solid black;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: transform 0.35s ease-in-out;
+}
+
+.rainbowbutton-border:hover {
+  transform: scale3d(1.1, 1.32, 1);
+}
+
+.rainbowbutton-border-background {
+  height: 60px;
+  width: 800px;
+  background: url("../imgs/buttonbackground.png");
+  animation: translateX 2s infinite linear;
+}
+
+.hero-unit .rainbowbutton {
+  position: absolute;
+  bottom: 50px;
+}
+
+.hero-unit .rainbowbutton::before {
+  content: "Projects";
+  left: 15px;
+}
+
+.hero-unit .rainbowbutton::after {
+  background-color: #202020;
+}
+
+.hero-unit .rainbowbutton-border {
+  border-color: #202020;
+}
+
+@keyframes translateX {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(-86%);
+  }
+}
